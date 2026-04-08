@@ -172,6 +172,39 @@ export default function BackgroundSection() {
           ))}
         </div>
 
+        {/* ── Skills ── */}
+        <div className="mt-20 pt-16 border-t border-[var(--color-warm)]">
+          <span
+            className="block text-[var(--color-muted)] mb-10"
+            style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.12em' }}
+          >
+            Skills
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {t.background.skills.map((group: { category: string; items: string[] }) => (
+              <div key={group.category} data-bg-row>
+                <p
+                  className="text-[var(--color-text)] mb-3"
+                  style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em' }}
+                >
+                  {group.category}
+                </p>
+                <ul className="space-y-1.5">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="text-[var(--color-dim)]"
+                      style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )

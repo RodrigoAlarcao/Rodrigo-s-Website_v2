@@ -143,6 +143,12 @@
         "school": "FBAUL",
         "year": "2016"
       }
+    ],
+    "skills": [
+      { "category": "Design", "items": ["Arquitetura de Informação", "User Flows", "Prototipagem", "Design Visual", "Design Systems", "B2B/SaaS"] },
+      { "category": "Build", "items": ["Next.js", "Tailwind CSS", "GSAP", "Supabase"] },
+      { "category": "AI Workflow", "items": ["Claude", "Claude Code", "Cursor AI", "Gemini"] },
+      { "category": "Tools", "items": ["Figma", "Jira", "Notion", "Miro"] }
     ]
   },
   "contact": {
