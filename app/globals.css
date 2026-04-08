@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ── Sandstone Soft Palette ── */
+  --color-bg: #FAFAF8;
+  --color-surface: #F0EDE8;
+  --color-warm: #D9D3CB;
+  --color-text: #1A1A19;
+  --color-dim: #6B6560;
+  --color-muted: #9C9690;
+  --color-border: rgba(26, 26, 25, 0.08);
+  --color-accent: #1A1A19;
+
+  /* ── Typography ──
+   * Fonts self-hosted via @fontsource imports in layout.tsx.
+   * Body: DM Sans (fallback — swap to 'Satoshi' when WOFF2 added to public/fonts/).
+   */
+  --font-display: 'Special Gothic Expanded One', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

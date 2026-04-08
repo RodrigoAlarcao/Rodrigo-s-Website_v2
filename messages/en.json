@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "about": "About",
+    "process": "Process",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Rodrigo Alarcão",
+    "rotating": ["designer", "builder", "methodologist"],
+    "statement": "I take ideas from concept to MVP in weeks —\nnot decks, not prototypes. Working products."
+  },
+  "about": {
+    "body": [
+      "I'm a product designer who builds.",
+      "Seven years designing complex B2B systems taught me how products really work — the messy parts, the edge cases, the decisions that only make sense when you've shipped something real.",
+      "Then I started building. Not switching careers — expanding what design means to me. I use AI as a tool, not a shortcut. I developed my own methodology to go from a raw idea to a live product with consistency and quality.",
+      "In 2026 I launched two products independently. One of them — a civic participation platform — I built solo in ten days using Claude Code. No technical co-founder. No handoff to a developer. Just process, judgment, and the right tools.",
+      "I'm looking for founders and teams who need someone that thinks about product, designs with intent, and ships without waiting for permission.",
+      "Based in Lisbon."
+    ]
+  },
+  "methodology": {
+    "intro": "Every product I build follows the same system.\nFour steps, documented before the first line of code.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "body": "Understanding the idea before touching any tool. What should this feel like? Who is it for? What's the emotional core? I use a VIBE-PRD — a document that captures intent and personality before any technical decision."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "body": "Choosing the right stack, defining the design system, documenting every decision. My Foundation and Decision Framework ensure nothing is improvised. When building starts, every question already has an answer."
+      },
+      {
+        "number": "03",
+        "title": "Design & Build",
+        "body": "Design and code happen together. No Figma handoff, no gap between what's designed and what's built. Using AI-assisted development, I move from wireframe to working product in days — iterating in the browser, not in a static file."
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "body": "A working product in production. Deployed, tested, real. Not a prototype that lives in a presentation — an MVP that users can touch. Then: feedback, iteration, and scale."
+      }
+    ]
+  },
+  "work": {
+    "heading": "Work",
+    "projects": [
+      {
+        "slug": "palco-democratico",
+        "name": "Palco Democrático",
+        "type": "Civic Participation Platform",
+        "stack": ["Next.js", "Supabase", "Claude Code"],
+        "status": "Live — March 2026",
+        "tagline": "Built solo in 10 days. No technical co-founder.",
+        "description": "A digital platform for civic participation — giving citizens a space to discuss, propose, and vote on ideas that matter to their communities.",
+        "url": "https://palcodemocratico.pt"
+      },
+      {
+        "slug": "ecoreport",
+        "name": "EcoReport",
+        "type": "Environmental Reporting Platform",
+        "stack": ["Next.js", "Cursor AI"],
+        "status": "Live — January 2026",
+        "tagline": "First AI-assisted project. End-to-end product design.",
+        "description": "Environmental reporting platform co-founded with a technical partner. Led the entire product design and user experience.",
+        "url": "https://ecoreport.pt"
+      }
+    ]
+  },
+  "background": {
+    "heading": "Background",
+    "roles": [
+      {
+        "title": "Product Designer",
+        "company": "ComparaJá",
+        "period": "April 2022 – Present",
+        "location": "Lisbon"
+      },
+      {
+        "title": "UX/UI Designer",
+        "company": "BI4ALL",
+        "period": "2021 – 2022",
+        "location": "Lisbon"
+      },
+      {
+        "title": "UX/UI Designer",
+        "company": "AROMNI",
+        "period": "2018 – 2020",
+        "location": "Almada"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master's in Interaction Design",
+        "school": "IADE",
+        "year": "2020",
+        "grade": "18/20"
+      },
+      {
+        "degree": "Bachelor's in Product Design",
+        "school": "FBAUL",
+        "year": "2016"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's talk.",
+    "body": "I work best embedded with founders and teams —\nearly-stage products, venture studios, incubators.",
+    "subtext": "If you have a raw idea and need someone who designs, builds, and ships:",
+    "email": "alarcao.rodrigo@gmail.com",
+    "linkedin": "https://linkedin.com/in/rodrigoalarcao"
+  },
+  "footer": {
+    "copy": "© 2026 Rodrigo Alarcão",
+    "tagline": "Built with methodology."
+  }
+}
