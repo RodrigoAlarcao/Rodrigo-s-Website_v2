@@ -16,16 +16,18 @@ export default function AboutSection() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const ctx = gsap.context(() => {
-      gsap.from('[data-about-para]', {
-        opacity: 0,
-        y: 30,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        },
+      // Each paragraph slides up and fades individually
+      t.about.body.forEach((_: any, i: number) => {
+        gsap.from(`[data-about-para="${i}"]`, {
+          opacity: 0,
+          y: 24,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: `[data-about-para="${i}"]`,
+            start: 'top 88%',
+          },
+        })
       })
     }, sectionRef)
 
@@ -40,30 +42,23 @@ export default function AboutSection() {
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
-        {/* Section label */}
         <span
-          data-about-para
           className="block text-[var(--color-muted)] mb-12"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.12em',
-          }}
+          style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.12em' }}
         >
           About
         </span>
 
-        {/* Body paragraphs — left-aligned, max 680px */}
         <div className="max-w-[680px] space-y-6">
-          {t.about.body.map((para, i) => (
+          {t.about.body.map((para: string, i: number) => (
             <p
               key={i}
-              data-about-para
+              data-about-para={i}
               className="text-[var(--color-text)] leading-relaxed"
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
+                fontWeight: i === 0 ? 500 : 400,
               }}
             >
               {para}

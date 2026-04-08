@@ -46,29 +46,68 @@
     ]
   },
   "work": {
-    "heading": "Trabalho",
-    "projects": [
-      {
-        "slug": "palco-democratico",
-        "name": "Palco Democrático",
-        "type": "Plataforma de Participação Cívica",
-        "stack": ["Next.js", "Supabase", "Claude Code"],
-        "status": "Live — Março 2026",
-        "tagline": "Construído sozinho em 10 dias. Sem co-fundador técnico.",
-        "description": "Uma plataforma digital de participação cívica — dando aos cidadãos um espaço para discutir, propor e votar em ideias que importam às suas comunidades.",
-        "url": "https://palcodemocratico.pt"
-      },
-      {
-        "slug": "ecoreport",
-        "name": "EcoReport",
-        "type": "Plataforma de Reporte Ambiental",
-        "stack": ["Next.js", "Cursor AI"],
-        "status": "Live — Janeiro 2026",
-        "tagline": "Primeiro projecto assistido por AI. Product design end-to-end.",
-        "description": "Plataforma de reporte ambiental co-fundada com um parceiro técnico. Liderei todo o product design e experiência do utilizador.",
-        "url": "https://ecoreport.pt"
-      }
-    ]
+    "personal": {
+      "label": "Pessoal",
+      "projects": [
+        {
+          "slug": "palco-democratico",
+          "name": "Palco Democrático",
+          "type": "Plataforma de Participação Cívica",
+          "stack": ["Next.js", "Supabase", "Claude Code"],
+          "status": "Live — Março 2026",
+          "tagline": "Construído sozinho em 10 dias. Sem co-fundador técnico.",
+          "description": "Uma plataforma digital de participação cívica — dando aos cidadãos um espaço para discutir, propor e votar em ideias que importam às suas comunidades.",
+          "url": "https://palcodemocratico.pt"
+        },
+        {
+          "slug": "ecoreport",
+          "name": "EcoReport",
+          "type": "Plataforma de Reporte Ambiental",
+          "stack": ["Next.js", "Cursor AI"],
+          "status": "Live — Janeiro 2026",
+          "tagline": "Primeiro projecto assistido por AI. Product design end-to-end.",
+          "description": "Plataforma de reporte ambiental co-fundada com um parceiro técnico. Liderei todo o product design e experiência do utilizador.",
+          "url": "https://ecoreport.pt"
+        }
+      ]
+    },
+    "professional": {
+      "label": "Profissional",
+      "company": "ComparaJá",
+      "period": "2022 – Presente",
+      "items": [
+        {
+          "title": "Iteração de Imagem das LPs",
+          "type": "A/B Testing · Design Visual",
+          "description": "Iteração sistemática de imagens hero em múltiplas landing pages. Melhoria de performance visual e taxas de conversão em diferentes verticais."
+        },
+        {
+          "title": "Calculadora de Salário Líquido",
+          "type": "Ferramenta de Produto",
+          "description": "Desenhei e lancei uma das ferramentas com mais tráfego da plataforma — uma calculadora de salário líquido usada por milhares de utilizadores mensalmente."
+        },
+        {
+          "title": "Iteração de Funil de Conversão",
+          "type": "UX · Otimização de Conversão",
+          "description": "Iteração completa do layout dos funis de conversão. Melhorou a legibilidade e as taxas de conclusão em múltiplas verticais."
+        },
+        {
+          "title": "Redesign da Página de Resultados",
+          "type": "Design de Interface · UX",
+          "description": "Redesign da página de comparação de resultados para melhorar a legibilidade, sinais de confiança e conversão."
+        },
+        {
+          "title": "Backoffice de Intermediação de Crédito",
+          "type": "B2B · SaaS · Design System",
+          "description": "Design end-to-end de um backoffice operacional para intermediação de crédito hipotecário — CRM, workflows de compliance e automações bancárias."
+        }
+      ]
+    },
+    "explorations": {
+      "label": "Explorações",
+      "items": [],
+      "placeholder": "Explorações de vibe coding em progresso."
+    }
   },
   "background": {
     "heading": "Percurso",

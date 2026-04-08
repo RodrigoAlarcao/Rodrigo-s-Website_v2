@@ -3,7 +3,6 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
-
 import type { CSSProperties } from 'react'
 
 interface RotatingTextProps {
@@ -12,78 +11,53 @@ interface RotatingTextProps {
   style?: CSSProperties
 }
 
-/**
- * Cycles through words with a slide-up / slide-down GSAP loop.
- * PRD spec: y:30 → 0 → -30, opacity fade, duration 0.6s, repeatDelay 2.5s
- * prefers-reduced-motion: renders all words joined by " · " instead.
- */
 export default function RotatingText({ words, className = '', style }: RotatingTextProps) {
   const containerRef = useRef<HTMLSpanElement>(null)
   const wordRefs = useRef<HTMLSpanElement[]>([])
-  const reducedMotion = useRef(false)
 
-  // Detect preference once on mount
   useIsomorphicLayoutEffect(() => {
-    reducedMotion.current =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // Set initial state immediately — before paint — so no flash of all words
+    const els = wordRefs.current
+    if (els.length === 0) return
+    gsap.set(els, { opacity: 0, y: 30, position: 'absolute', left: 0, top: 0 })
+    gsap.set(els[0], { opacity: 1, y: 0, position: 'relative' })
   }, [])
 
   useEffect(() => {
-    if (reducedMotion.current) return
-    if (!containerRef.current || wordRefs.current.length === 0) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const els = wordRefs.current
-    const count = els.length
-
-    // Start: all hidden except first
-    gsap.set(els, { opacity: 0, y: 30 })
-    gsap.set(els[0], { opacity: 1, y: 0 })
+    if (els.length === 0) return
 
     let current = 0
+    let delayedCall: gsap.core.Tween
 
     function cycle() {
-      const next = (current + 1) % count
+      const next = (current + 1) % els.length
+
       const tl = gsap.timeline({
         onComplete: () => {
           current = next
-          // Schedule next cycle
-          gsap.delayedCall(2.5, cycle)
+          delayedCall = gsap.delayedCall(2.5, cycle)
         },
       })
 
-      // Slide current word out (up)
-      tl.to(els[current], {
-        opacity: 0,
-        y: -30,
-        duration: 0.45,
-        ease: 'power2.in',
-      })
-      // Slide next word in (from below)
-      tl.fromTo(
-        els[next],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
-        '-=0.05'
-      )
+      // Out: absolute → slide up
+      tl.set(els[current], { position: 'absolute' })
+      tl.to(els[current], { opacity: 0, y: -30, duration: 0.45, ease: 'power2.in' }, 0)
+
+      // In: relative (holds height) → slide from below
+      tl.set(els[next], { position: 'relative', y: 30, opacity: 0 }, 0)
+      tl.to(els[next], { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.4)
     }
 
-    const delay = gsap.delayedCall(2.5, cycle)
+    delayedCall = gsap.delayedCall(2.5, cycle)
 
     return () => {
-      delay.kill()
-      gsap.killTweensOf(els)
+      delayedCall?.kill()
+      gsap.killTweensOf(wordRefs.current)
     }
   }, [words])
-
-  // Reduced-motion: static list
-  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return (
-      <span className={className} style={style}>
-        {words.join(' · ')}
-      </span>
-    )
-  }
 
   return (
     <span
@@ -96,7 +70,7 @@ export default function RotatingText({ words, className = '', style }: RotatingT
         <span
           key={word}
           ref={(el) => { if (el) wordRefs.current[i] = el }}
-          className={i === 0 ? 'inline-block' : 'absolute left-0 top-0 inline-block'}
+          className="inline-block"
           aria-hidden={i !== 0}
         >
           {word}
